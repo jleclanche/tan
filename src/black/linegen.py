@@ -277,8 +277,9 @@ class LineGenerator(Visitor[Line]):
             docstring_started_empty = not docstring
 
             if is_multiline_string(leaf):
-                indent = " " * 4 * self.current_line.depth
-                docstring = fix_docstring(docstring, indent)
+                indent_style = " " * 4 if not self.mode.use_tabs else "\t"
+                indent = indent_style * self.current_line.depth
+                docstring = fix_docstring(docstring, indent, not self.mode.use_tabs)
             else:
                 docstring = docstring.strip()
 
@@ -352,7 +353,8 @@ def transform_line(
         yield line
         return
 
-    line_str = line_to_string(line)
+    # Force spaces to ensure len(line) is correct
+    line_str = line.render(force_spaces=True).strip("\n")
 
     ll = mode.line_length
     sn = mode.string_normalization

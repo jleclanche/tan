@@ -169,6 +169,21 @@ def test_pep_572() -> None:
     assert_format(source, expected, minimum_version=(3, 8))
 
 
+def test_long_first_line() -> None:
+    source, expected = read_data("long_first_line")
+    assert_format(source, expected, mode=black.Mode(use_tabs=True))
+
+
+def test_docstring_tabs() -> None:
+    source, expected = read_data("docstring_tabs")
+    assert_format(source, expected, mode=black.Mode(use_tabs=True))
+
+
+def test_line_length_tabs() -> None:
+    source, expected = read_data("line_length_tabs")
+    assert_format(source, expected, mode=black.Mode(line_length=20, use_tabs=True))
+
+
 def test_pep_572_remove_parens() -> None:
     source, expected = read_data("pep_572_remove_parens")
     assert_format(source, expected, minimum_version=(3, 8))
