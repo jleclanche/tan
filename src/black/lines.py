@@ -379,12 +379,13 @@ class Line:
             magic_trailing_comma=self.magic_trailing_comma,
         )
 
-    def __str__(self) -> str:
+    def render(self, force_spaces: bool = False) -> str:
         """Render the line."""
         if not self:
             return "\n"
 
-        indent = "    " * self.depth
+        indent_style = "    " if force_spaces or not self.mode.use_tabs else "\t"
+        indent = indent_style * self.depth
         leaves = iter(self.leaves)
         first = next(leaves)
         res = f"{first.prefix}{indent}{first.value}"
@@ -394,6 +395,10 @@ class Line:
             res += str(comment)
 
         return res + "\n"
+
+    def __str__(self) -> str:
+        """Render the line."""
+        return self.render()
 
     def __bool__(self) -> bool:
         """Return True if the line has leaves or comments."""
