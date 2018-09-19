@@ -71,18 +71,18 @@ else:
     ext_modules = []
 
 setup(
-    name="black",
+    name="tan",
     use_scm_version={
         "write_to": "src/_black_version.py",
         "write_to_template": 'version = "{version}"\n',
     },
-    description="The uncompromising code formatter.",
+    description="The compromising code formatter.",
     long_description=get_long_description(),
     long_description_content_type="text/markdown",
     keywords="automation formatter yapf autopep8 pyfmt gofmt rustfmt",
     author="Łukasz Langa",
     author_email="lukasz@langa.pl",
-    url="https://github.com/psf/black",
+    url="https://github.com/jleclanche/tan",
     project_urls={"Changelog": "https://github.com/psf/black/blob/main/CHANGES.md"},
     license="MIT",
     py_modules=["_black_version"],
@@ -129,8 +129,8 @@ setup(
     ],
     entry_points={
         "console_scripts": [
-            "black=black:patched_main",
-            "blackd=blackd:patched_main [d]",
+            "tan=black:patched_main",
+            "tand=blackd:patched_main [d]",
         ]
     },
 )

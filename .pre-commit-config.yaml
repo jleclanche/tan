@@ -7,7 +7,7 @@ repos:
       - id: black
         name: black
         language: system
-        entry: black
+        entry: tan
         minimum_pre_commit_version: 2.9.2
         require_serial: true
         types_or: [python, pyi]
