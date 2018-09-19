@@ -20,7 +20,7 @@ CacheInfo = Tuple[Timestamp, FileSize]
 Cache = Dict[str, CacheInfo]
 
 
-CACHE_DIR = Path(user_cache_dir("black", version=__version__))
+CACHE_DIR = Path(user_cache_dir("tan", version=__version__))
 
 
 def read_cache(mode: Mode) -> Cache:

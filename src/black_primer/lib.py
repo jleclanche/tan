@@ -30,7 +30,7 @@ import click
 
 TEN_MINUTES_SECONDS = 600
 WINDOWS = system() == "Windows"
-BLACK_BINARY = "black.exe" if WINDOWS else "black"
+BLACK_BINARY = "tan.exe" if WINDOWS else "tan"
 GIT_BINARY = "git.exe" if WINDOWS else "git"
 LOG = logging.getLogger(__name__)
 

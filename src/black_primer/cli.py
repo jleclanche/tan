@@ -88,8 +88,8 @@ async def async_main(
         LOG.debug(f"Creating {work_path}")
         work_path.mkdir()
 
-    if not which("black"):
-        LOG.error("Can not find 'black' executable in PATH. No point in running")
+    if not which("tan"):
+        LOG.error("Can not find 'tan' executable in PATH. No point in running")
         return -1
 
     try:

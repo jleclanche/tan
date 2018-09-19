@@ -44,4 +44,4 @@ jobs:
         env:
           pythonioencoding: utf-8
         run: |
-          black-primer
+          tan-primer
