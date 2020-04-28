@@ -1002,6 +1002,7 @@ def format_str(src_contents: str, *, mode: Mode) -> FileContent:
         is_pyi=mode.is_pyi,
         normalize_strings=mode.string_normalization,
         use_tabs=mode.use_tabs,
+        current_line=Line(use_tabs=mode.use_tabs),
     )
     elt = EmptyLineTracker(is_pyi=mode.is_pyi)
     empty_line = Line(use_tabs=mode.use_tabs)
