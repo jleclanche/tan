@@ -42,4 +42,4 @@ jobs:
 
       - name: Primer uvloop run
         run: |
-          black-primer
+          tan-primer
